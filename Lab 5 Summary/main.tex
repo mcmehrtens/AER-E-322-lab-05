@@ -242,7 +242,7 @@ To derive the following deflection expressions, we are given the following equat
 \end{align}
 where $L$ is the length of the beam, $E$ is the elastic modulus of the beam material, $I$ is the beam moment of inertia, $w$ is the applied load, $L_1$ is the distance from the fixed end of the beam to the applied load, and $x$ is the point about which deflection is measured. Note that Equation \ref{eqn:superpos_2} is invalid for $L_1=L$.
 
-The configuration for test four, shown in \ref{fig:config_4}, consists of a beam fixed at one end with a roller support on the other end. A load is being applied at $\frac{1}{3}$ the length, measured from the fixed end. To calculate the deflection at $\frac{2}{3}$ the length, \ie $x=\frac{2}{3}L$, we are given the following equation:
+The configuration for test four, shown in Figure \ref{fig:config_4}, consists of a beam fixed at one end with a roller support on the other end. A load is being applied at $\frac{1}{3}$ the length, measured from the fixed end. To calculate the deflection at $\frac{2}{3}$ the length, \ie $x=\frac{2}{3}L$, we are given the following equation:
 \begin{align} \label{eqn:config_4-deflection}
 	\nu&=-\frac{w}{EI}\frac{23}{4374}L^3
 \end{align}
@@ -256,16 +256,16 @@ The deflection due to the applied load at $x=\frac{1}{3}L$, $\nu_w$, can be deri
 	&=-\frac{w\frac{1}{9}L^2}{6EI}(3x-\frac{1}{3}L)\\
 	&=-\frac{wL^2}{162EI}(9x-L)
 \end{align*}
-This expression is true for all $x\in[L_1,L]$.
+This expression is true for all $x\in[\frac{1}{3}L,L]$.
 
-The deflection to the redundant reaction force at $x=L$, $\nu_{R_y}$, can be derived from Equation \ref{eqn:superpos_3}.
+The deflection due to the redundant reaction force at $x=L$, $\nu_{R_y}$, can be derived from Equation \ref{eqn:superpos_3}.
 \begin{align*}
 	\nu_{R_y}(x)&=-\frac{wx^2}{6EI}(3L-x)\\
 	&=-\frac{R_yx^2}{6EI}(3L-x)
 \end{align*}
 This expression is true for all $x\in[0,L]$.
 
-To calculate the deflection at $x=\frac{2}{3}L$, we first need to determine the value of $R_y$. We know from Figure \ref{fig:config_4}, at $x=L$, there is a roller support, and therefore, $\nu(x)=0$. We apply this boundary condition below to find $R_y$.
+To calculate the deflection at $x=\frac{2}{3}L$, we first need to determine the value of $R_y$. We know from Figure \ref{fig:config_4}, at $x=L$ there is a roller support, and therefore, $\nu(x)=0$ at $x=L$. We apply this boundary condition below to find $R_y$.
 \begin{align*}
 	\nu(L)&=\nu_w(L)+\nu_{R_y}(L)=0\\
 	0&=-\frac{wL^2}{162EI}(9L-L)-\frac{R_yL^2}{6EI}(3L-L)\\
@@ -274,7 +274,7 @@ To calculate the deflection at $x=\frac{2}{3}L$, we first need to determine the 
 \end{align*}
 Substituting in the derived expression for $R_y$ into the earlier equation for $\nu_{R_y}$, we find that
 \begin{align*}
-	\nu_{R_y}&=\frac{2wx^2}{81EI}(3L-x)
+	\nu_{R_y}(x)&=\frac{2wx^2}{81EI}(3L-x)
 \end{align*}
 Now that we have expressions for both $\nu_w$ and $\nu_{R_y}$ in terms of $w$, we can find the derive an equation for the deflection of the beam at $x=\frac{2}{3}L$ in terms of $w$, $E$, $I$, and $L$.
 \begin{align*}
@@ -284,10 +284,62 @@ Now that we have expressions for both $\nu_w$ and $\nu_{R_y}$ in terms of $w$, w
 	&=\frac{wL^3}{EI}\left(-\frac{5}{162}+\frac{56}{2187}\right)\\
 	&=-\frac{23wL^3}{4374EI}
 \end{align*}
-As expected, this equation matches the given expression in Equation \ref{eqn:config_4-deflection}. Calculating the theoretical deflection is then trivial. We know $w=(\qty{1000}{\g})(\frac{\qty{1}{\kg}}{\qty{1000}{\g}})(\qty[per-mode = fraction]{9.81}{\m\per\s\squared})=\qty{9.81}{\N}$, $L=\qty{0.90}{\m}$, $E=\qty{68.9e9}{\Pa}$, and $I=\frac{1}{12}(\qty{12.8}{\mm})(\qty{6.4}{\mm})^3(\frac{\qty{1}{\m}}{\qty{1000}{\mm}})^4=\qty{2.796e-10}{\m^4}$. Plugging these values into Equation \ref{eqn:config_4-deflection}, we find that
+As expected, this equation matches the given expression in Equation \ref{eqn:config_4-deflection}. Calculating the theoretical deflection is then trivial. We know $w=(\qty{1000}{\g})(\frac{\qty{1}{\kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{9.81}{\N}$, $L=\qty{0.90}{\m}$, $E=\qty{68.9e9}{\Pa}$, and $I=\frac{1}{12}(\qty{12.8}{\mm})(\qty{6.4}{\mm})^3(\frac{\qty{1}{\m}}{\qty{1000}{\mm}})^4=\qty{2.796e-10}{\m^4}$. Plugging these values into Equation \ref{eqn:config_4-deflection}, we find that
 \begin{align*}
 	\nu\left(\frac{2}{3}L\right)&=-\frac{23(\qty{9.81}{\N})(\qty{0.90}{\m})^3}{4374(\qty{68.9e9}{\Pa})(\qty{2.796e-10}{\m^4})}\\
 	&=\qty{-1.952}{\mm}\text{ or }\qty{1.952}{\mm}\downarrow
+\end{align*}
+
+The configuration for test five, shown in Figure \ref{fig:config_5}, consists of a beam fixed at one end with a roller support at $\frac{2}{3}$ the length. A load is being applied at $\frac{1}{3}$ the length and at the end, measured from the fixed end. To calculate the deflection at the free end of the beam, \ie $x=L$, we are given the following equation:
+\begin{align} \label{eqn:config_5-deflection}
+	\nu&=-\frac{L^3}{EI}\left(\frac{5w_2}{162}-\frac{w_1}{216}\right)
+\end{align}
+where $w_1$ is the applied load at $x=\frac{1}{3}L$, $w_2$ is the applied load at $x=L$, $E$ is the elastic modulus, $I$ is the moment of inertia, $L$ is the length of the beam, and $\nu$ is the deflection of the beam at $x=L$.
+
+To derive this expression, we first note that the beam configuration is indeterminate. The roller support is redundant and can be replaced by a vertical applied load of magnitude, $R_y$. The beam is now effectively a cantilevered beam with three applied loads. Deflection at a point $x$ can be calculated by summing the deflection at $x$ from each of the applied loads.
+
+The deflection due to the applied load at $x=\frac{1}{3}$, $\nu_{w_1}$, can be derived from Equation \ref{eqn:superpos_2}.
+\begin{align*}
+	\nu_{w_1}(x)&=-\frac{wL_1^2}{6EI}(3x-L_1)\\
+	&=-\frac{w_1\frac{1}{9}L^2}{6EI}(3x-\frac{1}{3}L)\\
+	&=\frac{w_1L^2}{162EI}(9x-L)
+\end{align*}
+This expression is true for all $x\in[\frac{1}{3}L,L]$.
+
+The deflection due to the redundant reaction force at $x=\frac{2}{3}L$, $\nu_{R_y}$, can be derived from Equation \ref{eqn:superpos_2}.
+\begin{align*}
+	\nu_{R_y}(x)&=-\frac{wL_1^2}{6EI}(3x-L_1)\\
+	&=-\frac{R_y\frac{4}{9}L^2}{6EI}(3x-\frac{2}{3}L)\\
+	&=-\frac{2R_yL^2}{81EI}(9x-2L)
+\end{align*}
+This expression is true for all $x\in[\frac{2}{3}L,L]$.
+
+The deflection due to the applied load at $x=L$, $\nu_{w_2}$, can be derived from Equation \ref{eqn:superpos_3}.
+\begin{align*}
+	\nu_{w_2}(x)&=-\frac{wx^2}{6EI}(3L-x)\\
+	&=-\frac{w_2}x^2{6EI}(3L-x)
+\end{align*}
+This expression is for all $x\in[0,L]$.
+
+To calculate the deflection at $x=L$, we first need to determine the value of $R_y$. We know from Figure \ref{fig:config_5}), at $x=\frac{2}{3}L$ there is a roller support, and therefore, $\nu(x)=0$ at $x=\frac{2}{3}L$. We apply this boundary condition below to find $R_y$.
+\begin{align*}
+	\nu(\frac{2}{3}L&=\nu_{w_1}(\frac{2}{3}L)+\nu_{R_y}(\frac{2}{3}L)+\nu_{w_2}(\frac{2}{3}L)=0\\
+	0&=-\frac{w_1L^2}{162EI}(9(\frac{2}{3}L)-L)-\frac{2R_yL^2}{81EI}(9(\frac{2}{3}L)-2L)-\frac{w_2\frac{4}{9}L^2}{6EI}(3L-(\frac{2}{3}L)\\
+	0&=-\frac{5w_1}{162}-\frac{8R_y}{81}-\frac{14w_2}{81}\\
+	R_y&=-\frac{5}{16}(w_1+\frac{28w_2}{5})	
+\end{align*}
+Now that we have expressions for the deflection due to all the forces, we can derive an equation for the deflection of the beam at $x=L$ using the method of superposition.
+\begin{align*}
+	\nu(L)&=\nu_{w_1}(L)+\nu_{R_y}(L)+\nu_{w_2}(L)\\
+	&=-\frac{w_1L^2}{162EI}(9L-L)-\frac{2\left(-\frac{5}{16}\left[w_1+\frac{28w_2}{5}\right]\right)L^2}{81EI}(9L-2L)-\frac{w_2L^2}{6EI}(3L-L)\\
+	&=-\frac{4w_1L^3}{81EI}+\frac{35\left(w_1+\frac{28w_2}{5}\right)L^3}{648EI}-\frac{w_2L^3}{3EI}\\
+	&=-\frac{L^3}{EI}\left[\frac{4w_1}{81}-\frac{35w_1}{648}-\frac{49w_2}{162}+\frac{w_2}{3}\right]\\
+	&=-\frac{L^3}{EI}\left(\frac{5w_2}{162}-\frac{w_1}{216}\right)
+\end{align*}
+As expected, this equation matches the given expression in Equation \ref{eqn:config_5-deflection}. Calculating the theoretical deflection is then trivial. We know $w_1=(\qty{2500}{g})(\frac{\qty{1}{kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{24.53}{\N}$, $w_2=(\qty{200}{\g})(\frac{\qty{1}{\kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{19.62}{\N}$, $L=\qty{0.90}{\m}$, $E=\qty{68.9e9}{\Pa}$, and $I=\frac{1}{12}(\qty{12.8}{\mm})\cdot(\qty{6.4}{\mm})^3(\frac{\qty{1}{\m}}{\qty{1000}{\mm}})^4=\qty{2.796e-10}{\m^4}$. Plugging these values into Equation \ref{eqn:config_5-deflection}, we find that
+\begin{align*}
+	\nu(L)&=-\frac{\qty{0.90}{\m}}{(\qty{68.9e9}{\Pa})(\qty{2.796e-10}{\m^4})}\left(\frac{5(\qty{19.62}{\N})}{162}-\frac{\qty{24.53}{\N}}{216}\right)\\
+	&=\qty{2.005}{\mm}\text{ or }\qty{2.005}{\mm}\uparrow
 \end{align*}
 
 \section{Conclusion} \label{conclusion}
