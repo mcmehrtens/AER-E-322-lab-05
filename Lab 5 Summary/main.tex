@@ -165,15 +165,13 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 		\hline
 		\multicolumn{4}{| c |}{\textit{Lab Work}} \\
 		\hline
-		Date Recording & & & \\
+		Date Recording & X & & X \\
 		\hline
-		Exp. Setup & & & \\
+		Exp. Setup & & X & X \\
 		\hline
-		Exp. Work & & & \\
+		Exp. Work & X & X & X \\
 		\hline
-		Exp. Clean-Up & & & \\
-		\hline
-		\multicolumn{4}{| c |}{\textit{Post Lab}} \\
+		Exp. Clean-Up & X & X & X \\
 		\hline
 		\multicolumn{4}{| c |}{\textit{Report}} \\
 		\hline
@@ -183,19 +181,19 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 		\hline
 		Hypothesis & & & \\
 		\hline
-		Materials & & & \\
+		Materials & X & & \\
 		\hline
-		Apparatus & & & \\
+		Apparatus & X & & \\
 		\hline
-		Procedures & & & \\
+		Procedures & X & & \\
 		\hline
-		Data & & & \\
+		Data & X & & \\
 		\hline
-		Analysis & & & \\
+		Analysis & X & X & X \\
 		\hline
 		Conclusion & & & \\
 		\hline
-		Editing & & & \\
+		Editing & X & & \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -203,9 +201,25 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 \end{table}
 
 \section{Materials} \label{materials}
-% TODO
+The following materials are required for this lab:
+
+\begin{itemize}
+	\item Aluminum beam with cross-sectional dimensions: \qtyproduct{12.8x6.4}{\mm}
+	\item Aluminum beam with cross-sectional dimensions: \qtyproduct{12.8x12.8}{\mm}
+	\item Digital displacement gauge
+	\item Wooden base board
+	\item Wooden roller stand
+	\item Vise clamp
+	\item \qtylist{100;200;500;1000;1500}{\g} mass
+	\item Ruler
+	\item Wrench
+\end{itemize}
+
+The aluminum beams should be the Aluminum 6061-T6511 alloy, at least \qty{90}{\cm} long, and have a Young's Modulus, $E$, of \qty{1e7}{psi} or \qty{68.9}{\GPa}.
 
 \section{Apparatus} \label{apparatus}
+For configurations 1--3, shown in Figure \ref{fig:config_1-3}, the beam was cantilevered, the load was applied to the free end ($x=\qty{90}{\cm}$), and the deflection was measured at $x=\frac{2}{3}L$.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=6in]{images/Config 1-3}
@@ -213,12 +227,36 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 \label{fig:config_1-3}
 \end{figure}
 
+Table \ref{tbl:configs} summarizes the differences between configurations 1--3.
+
+\begin{table}[!htbp]
+\caption{Dimensions and loads for configurations 1--3.}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Config&Base, $b$ [\unit{\mm}]&Height, $h$ [\unit{\mm}]&Mass [\unit{\g}]&Weight [\unit{\N}]\\
+		\hline
+		\num{1}&\num{12.8}&\num{6.4}&\num{100}&\num{0.981}\\
+		\hline
+		\num{2}&\num{6.4}&\num{12.8}&\num{200}&\num{1.96}\\
+		\hline
+		\num{3}&\num{12.8}&\num{12.8}&\num{500}&\num{4.905}\\
+		\hline
+	\end{tabular}
+\end{center}
+\label{tbl:configs}
+\end{table}
+
+For configuration 4, shown in Figure \ref{fig:config_4}, the beam was fixed at one end and---measuring from the fixed end---a roller was positioned at $x=L$, a load was applied at $x=\frac{1}{3}L$, and the deflection was measured at $x=\frac{2}{3}L$. The rectangular beam (\qtyproduct{12.8x6.4}{\mm}) was used, and the mass was \qty{1000}{\g}, resulting in a \qty{9.81}{\N} load.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=6in]{images/Config 4}
 \caption{The beam configuration for experiment 4.}
 \label{fig:config_4}
 \end{figure}
+
+For configuration 5, shown in Figure \ref{fig:config_5}, the beam was fixed at one end and---measuring from the fixed end---a roller was positioned at $x=\frac{2}{3}L$, mass $m_1$ was applied at $x=\frac{1}{3}L$, mass $m_2$ was applied at $x=L$, and the deflection was measured at $x=L$. The rectangular beam (\qtyproduct{12.8x6.4}{\mm}) was used. Mass $m_1$ was \qty{2500}{\g}, resulting in a \qty{24.5}{\N} load, and mass $m_2$ was \qty{200}{\g}, resulting in a \qty{1.96}{\N} load.
 
 \begin{figure}[htbp]
 \centering
@@ -228,10 +266,32 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 \end{figure}
 
 \section{Procedures} \label{procedures}
-% TODO
+
 
 \section{Data} \label{data}
-% TODO
+The displacements in lab were recorded with the digital displacement gauge. The values are tabulated in Table \ref{tbl:data}.
+
+\begin{table}[!htbp]
+\caption{Tabulated displacements in the five different beam configurations.}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Config&Meas. 1 [\unit{\mm}]&Meas. 2 [\unit{\mm}]&Meas. 3 [\unit{\mm}]&Avg [\unit{\mm}]\\
+		\hline
+		\num{1}&\num{-4.62}&\num{-4.59}&\num{-4.60}&\num{-4.60}\\
+		\hline
+		\num{2}&\num{-3.55}&\num{-3.59}&\num{-3.57}&\num{-3.57}\\
+		\hline
+		\num{3}&\num{-5.01}&\num{-5.10}&\num{-5.00}&\num{-5.04}\\
+		\hline
+		\num{4}&\num{-2.13}&\num{-2.11}&\num{-2.12}&\num{-2.12}\\
+		\hline
+		\num{5}&\num{2.37}&\num{2.37}&\num{2.22}&\num{2.32}\\
+		\hline
+	\end{tabular}
+\end{center}
+\label{tbl:data}
+\end{table}
 
 \section{Analysis} \label{analysis}
 To derive the following deflection expressions, we are given the following equations of superposition for a cantilever beam:
@@ -248,7 +308,7 @@ The configuration for test four, shown in Figure \ref{fig:config_4}, consists of
 \end{align}
 where $w$ is the applied load, $E$ is the elastic modulus, $I$ is the moment of inertia, $L$ is the length of the beam, and $\nu$ is the deflection of the beam at $x=\frac{2}{3}L$.
 
-To derive this expression, we first note that the beam configuration is indeterminate. The roller support is redundant and can be replaced by a vertical applied load of magnitude, $R_y$. The beam is now effectively a cantilevered beam with two applied loads. Deflection at a point $x$ can be calculated by summing the deflection at $x$ from each of the applied loads.
+To derive this expression, we first note that the beam configuration is indeterminate. The roller support is redundant and can be replaced by a vertical applied load of magnitude $R_y$. The beam is now effectively a cantilevered beam with two applied loads. Deflection at a point $x$ can be calculated by summing the deflection at $x$ from each of the applied loads.
 
 The deflection due to the applied load at $x=\frac{1}{3}L$, $\nu_w$, can be derived from Equation \ref{eqn:superpos_2}.
 \begin{align*}
@@ -296,7 +356,7 @@ The configuration for test five, shown in Figure \ref{fig:config_5}, consists of
 \end{align}
 where $w_1$ is the applied load at $x=\frac{1}{3}L$, $w_2$ is the applied load at $x=L$, $E$ is the elastic modulus, $I$ is the moment of inertia, $L$ is the length of the beam, and $\nu$ is the deflection of the beam at $x=L$.
 
-To derive this expression, we first note that the beam configuration is indeterminate. The roller support is redundant and can be replaced by a vertical applied load of magnitude, $R_y$. The beam is now effectively a cantilevered beam with three applied loads. Deflection at a point $x$ can be calculated by summing the deflection at $x$ from each of the applied loads.
+To derive this expression, we first note that the beam configuration is indeterminate. The roller support is redundant and can be replaced by a vertical applied load of magnitude $R_y$. The beam is now effectively a cantilevered beam with three applied loads. Deflection at a point $x$ can be calculated by summing the deflection at $x$ from each of the applied loads.
 
 The deflection due to the applied load at $x=\frac{1}{3}$, $\nu_{w_1}$, can be derived from Equation \ref{eqn:superpos_2}.
 \begin{align*}
@@ -336,10 +396,10 @@ Now that we have expressions for the deflection due to all the forces, we can de
 	&=-\frac{L^3}{EI}\left[\frac{4w_1}{81}-\frac{35w_1}{648}-\frac{49w_2}{162}+\frac{w_2}{3}\right]\\
 	&=-\frac{L^3}{EI}\left(\frac{5w_2}{162}-\frac{w_1}{216}\right)
 \end{align*}
-As expected, this equation matches the given expression in Equation \ref{eqn:config_5-deflection}. Calculating the theoretical deflection is then trivial. We know $w_1=(\qty{2500}{g})(\frac{\qty{1}{kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{24.53}{\N}$, $w_2=(\qty{200}{\g})(\frac{\qty{1}{\kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{19.62}{\N}$, $L=\qty{0.90}{\m}$, $E=\qty{68.9e9}{\Pa}$, and $I=\frac{1}{12}(\qty{12.8}{\mm})\cdot(\qty{6.4}{\mm})^3(\frac{\qty{1}{\m}}{\qty{1000}{\mm}})^4=\qty{2.796e-10}{\m^4}$. Plugging these values into Equation \ref{eqn:config_5-deflection}, we find that
+As expected, this equation matches the given expression in Equation \ref{eqn:config_5-deflection}. Calculating the theoretical deflection is then trivial. We know $w_1=(\qty{2500}{g})(\frac{\qty{1}{kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{24.53}{\N}$, $w_2=(\qty{200}{\g})(\frac{\qty{1}{\kg}}{\qty{1000}{\g}})(\qty[per-mode=fraction]{9.81}{\m\per\s\squared})=\qty{1.962}{\N}$, $L=\qty{0.90}{\m}$, $E=\qty{68.9e9}{\Pa}$, and $I=\frac{1}{12}(\qty{12.8}{\mm})\cdot(\qty{6.4}{\mm})^3(\frac{\qty{1}{\m}}{\qty{1000}{\mm}})^4=\qty{2.796e-10}{\m^4}$. Plugging these values into Equation \ref{eqn:config_5-deflection}, we find that
 \begin{align*}
-	\nu(L)&=-\frac{\qty{0.90}{\m}}{(\qty{68.9e9}{\Pa})(\qty{2.796e-10}{\m^4})}\left(\frac{5(\qty{19.62}{\N})}{162}-\frac{\qty{24.53}{\N}}{216}\right)\\
-	&=\qty{2.005}{\mm}\text{ or }\qty{2.005}{\mm}\uparrow
+	\nu(L)&=-\frac{\qty{0.90}{\m}}{(\qty{68.9e9}{\Pa})(\qty{2.796e-10}{\m^4})}\left(\frac{5(\qty{1.962}{\N})}{162}-\frac{\qty{24.53}{\N}}{216}\right)\\
+	&=\qty{2.475}{\mm}\text{ or }\qty{2.475}{\mm}\uparrow
 \end{align*}
 
 Using the theoretical values calculated above and during prelab, Table \ref{tbl:compare} compares the theoretical deflections to the deflections measured in lab. The deflections measured in lab are an average of three measurements. A negative deflection implies deflection is towards the ground ($\downarrow$).
@@ -351,7 +411,6 @@ Using the theoretical values calculated above and during prelab, Table \ref{tbl:
 		\hline
 		Configuration&Theoretical [\unit{\mm}]&Measured [\unit{\mm}]&Error\\
 		\hline
-		\hline
 		1&\num{-6.416}&\num{-4.60}&\qty{28.3}{\percent}\\
 		\hline
 		2&\num{-3.208}&\num{-3.57}&\qty{11.3}{\percent}\\
@@ -360,16 +419,16 @@ Using the theoretical values calculated above and during prelab, Table \ref{tbl:
 		\hline
 		4&\num{-1.952}&\num{-2.12}&\qty{8.61}{\percent}\\
 		\hline
-		5&\num{2.005}&\num{2.32}&\qty{15.7}{\percent}\\
+		5&\num{2.475}&\num{2.32}&\qty{6.30}{\percent}\\
 		\hline
 	\end{tabular}
 \end{center}
 \label{tbl:compare}
 \end{table}
 
-Two of the configurations, configuration one and configuration two, had particularly high error. This error was likely caused by the smaller surface area exposed to the clamp. In both of these configurations, the height of the surface the clamp was attached to was \qty{6.4}{\mm} rather than \qty{12.8}{\mm}. This made it very difficult to attach the beam to the board with the clamp, and it is likely that throughout the tests, the beam may have become unstable or unlevel.
+Two of the configurations, configuration one and configuration three, had particularly high error. For configuration one, this error was likely caused by the smaller surface area exposed to the clamp. In configuration one, the height of the surface the clamp was attached to was \qty{6.4}{\mm} rather than \qty{12.8}{\mm}. This made it very difficult to attach the beam to the board with the clamp, and it is likely that throughout the tests, the beam may have become unstable or unlevel. In configuration three, there was quite a lot of weight on the end of the cantilevered beam with only a clamp fixing the beam to the board. It is very possible the beam was slipping from the clamp under the \qty{500}{\g} mass.
 
-The other tests matched the theoretical values quite well. These amounts of error on such a small scale could be attributed to the accuracy of the device. We have shown in previous labs that the displacement needle is not the most precise or accurate measuring device and when the scale of displacement is in the single digit millimeters, error of \qtyrange{8}{16}{\percent} is expected without precise equipment.
+The other tests matched the theoretical values quite well. These amounts of error on such a small scale could be attributed to the accuracy of the device. We have shown in previous labs that the displacement needle is not the most precise or accurate measuring device, and when the scale of displacement is in the single digit millimeters, error of \qtyrange{6}{16}{\percent} is expected without precise equipment.
 
 It is also possible the weights were not exactly the correct mass, the weights were not placed at exactly the correct location---\ie the measurements on the beam may have been off by several millimeters or more---or the aluminum beam we used could have had a higher or lower Young's Modulus than the theoretical value. Any of these reasons could have contributed to the displacement being off by several millimeters.
 
